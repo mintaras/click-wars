@@ -1,0 +1,8 @@
+<div class="sides" >
+  <div class="side oponent" [ngStyle]="{width: oponentSideWidth +'%'}">
+    <h1 class="player-name">{{oponentName}}</h1>
+  </div>
+  <div class="side" (click)="onClick()" [ngStyle]="{width: sideWidth +'%'}">
+    <h1 class="player-name">{{playerName}}</h1>
+  </div>
+</div>

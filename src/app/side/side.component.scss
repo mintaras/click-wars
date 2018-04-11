@@ -1,0 +1,19 @@
+.sides {
+  display: flex;
+}
+.side {
+  width: 50%;
+  height: 100vh;
+  background-color: rgba(cyan, 0.6);
+  .player-name {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+  }
+  &.oponent {
+    background-color: rgba(red, 0.6);
+    .player-name {
+      color: cyan;
+    }
+  }
+}
