@@ -7,7 +7,9 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./input-dialog.component.scss']
 })
 export class InputDialogComponent implements OnInit {
+
     name: String;
+
     constructor(
       public dialogRef: MatDialogRef<InputDialogComponent>,
       @Inject(MAT_DIALOG_DATA) public data: any) { }
@@ -16,13 +18,14 @@ export class InputDialogComponent implements OnInit {
     }
 
     onEnter(event) {
-      if (event.keyCode == 13) {
-        this.onNoClick();
+      if (event.keyCode == 13 && this.name.length > 2) {
+        //this.dialogRef.close(this.name);
+        
       }
     }
 
-    onNoClick(): void {
-      this.dialogRef.close();
+    searchPlayer() {
+
     }
 
 }

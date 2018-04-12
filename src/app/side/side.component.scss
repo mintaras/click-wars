@@ -4,16 +4,16 @@
 .side {
   width: 50%;
   height: 100vh;
-  background-color: rgba(cyan, 0.6);
+  background-color: rgba(blue, 0.9);
   .player-name {
-    color: red;
+    color: orange;
     text-align: center;
     margin-top: 20px;
   }
   &.oponent {
-    background-color: rgba(red, 0.6);
+    background-color: rgba(orange, 0.9);
     .player-name {
-      color: cyan;
+      color: blue;
     }
   }
 }

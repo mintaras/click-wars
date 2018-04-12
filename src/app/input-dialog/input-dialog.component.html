@@ -1,3 +1,13 @@
-<mat-form-field>
+
+<ng-template #searchTemplate>
+  <div [ngClass]="'search-template'">
+    <mat-spinner diameter="48"></mat-spinner>
+    <div>Searching for players</div>
+  </div>
+</ng-template>
+<mat-form-field *ngIf="data; else searchTemplate">
   <input (keyup)="onEnter($event)" matInput [(ngModel)]="name" placeholder="What's your name?">
+  <mat-error *ngIf="">
+    At least 3 characters
+  </mat-error>
 </mat-form-field>

@@ -10,7 +10,7 @@ import { InputDialogComponent } from '../input-dialog/input-dialog.component';
 export class SideComponent implements OnInit {
   sideWidth = 50;
   playerName: String;
-  oponentName = 'John';
+  oponentName: String;
   oponentSideWidth = 50;
 
   constructor(public dialog: MatDialog) {}
@@ -26,13 +26,20 @@ export class SideComponent implements OnInit {
   openDialog(): void {
     let dialogRef = this.dialog.open(InputDialogComponent, {
       width: '250px',
-      data: { name: this.playerName }
+      disableClose: true
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       this.playerName = result;
+      this.mockOponent();
     });
+  }
+
+  mockOponent() {
+    setInterval(() => {
+      this.sideWidth -= 5;
+      this.oponentSideWidth += 5;
+    }, 750);
   }
 
   onClick() {
