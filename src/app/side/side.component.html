@@ -6,3 +6,6 @@
     <h1 class="player-name">{{playerName}}</h1>
   </div>
 </div>
+<div class="message" *ngIf="message" [@fadeInOut]>
+  {{message}}
+</div>
